@@ -127,6 +127,8 @@ a { color: inherit; }
   color: var(--accent);
 }
 
+.eyebrow__who { color: var(--ink); font-weight: 700; }
+
 .sec-head { max-width: 62ch; margin-bottom: clamp(44px, 6vw, 76px); }
 .sec-head h2 { font-size: clamp(2.1rem, 5.4vw, 3.7rem); margin: 18px 0 0; }
 .sec-head .lede { margin-top: 22px; color: var(--muted); max-width: 54ch; }
