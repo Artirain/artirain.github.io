@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Артур — Python / AI Engineer</title>
+<meta name="description" content="Python / AI Engineer. LLM-ассистенты, RAG, агенты и пайплайны обработки текста — от идеи до прода.">
+<meta property="og:title" content="Артур — Python / AI Engineer">
+<meta property="og:description" content="LLM-ассистенты, RAG, агенты и пайплайны обработки текста — от идеи до прода.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://artirain.github.io/">
+<meta property="og:image" content="https://artirain.github.io/assets/portrait.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2317102B'/%3E%3Cpath d='M7 22 L13 10 L19 22 M9.5 18 H16.5' stroke='%239B7BFF' stroke-width='2.2' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='24' cy='11' r='2.6' fill='%239B7BFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<a class="skip" href="#main">К содержимому</a>
+
+<header class="topbar">
+  <a class="topbar__mark" href="#top" aria-label="В начало">
+    <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+      <path d="M7 22 L13 10 L19 22 M9.5 18 H16.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="24" cy="11" r="2.6" fill="currentColor"/>
+    </svg>
+  </a>
+  <nav class="topbar__nav" aria-label="Разделы">
+    <a href="#pipeline">Что я делаю</a>
+    <a href="#work">Опыт</a>
+    <a href="#projects">Проекты</a>
+    <a href="#stack">Стек</a>
+  </nav>
+  <a class="topbar__cta" href="mailto:ansre1313@gmail.com">Написать</a>
+</header>
+
+<main id="main">
+
+<!-- ─────────────────────────  HERO  ───────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero__grid">
+
+    <div class="hero__text">
+      <p class="eyebrow reveal" data-d="0">Python / AI Engineer · Бишкек · удалённо</p>
+
+      <h1 class="hero__name">
+        <span class="reveal" data-d="1">Артур</span>
+      </h1>
+
+      <p class="hero__lede reveal" data-d="3">
+        Нахожу в бизнесе ручные процессы и закрываю их LLM-системами: ассистенты
+        поддержки, извлечение структуры из текста, агенты. Python — от идеи до прода.
+      </p>
+
+      <div class="hero__meta reveal" data-d="4">
+        <span>~2 года в разработке</span>
+        <span>больше года — LLM в проде</span>
+        <span>открыт к предложениям</span>
+      </div>
+
+      <div class="hero__actions reveal" data-d="5">
+        <a class="btn btn--solid" href="#projects">Смотреть проекты</a>
+        <a class="btn" href="mailto:ansre1313@gmail.com">ansre1313@gmail.com</a>
+      </div>
+    </div>
+
+    <figure class="portrait reveal" data-d="2">
+      <div class="portrait__frame">
+        <img src="assets/portrait.jpg" alt="Портрет Артура" width="892" height="892" fetchpriority="high">
+        <svg class="portrait__ticks" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 8 V0 H8 M92 0 H100 V8 M100 92 V100 H92 M8 100 H0 V92"
+                fill="none" stroke="currentColor" stroke-width="0.6" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </div>
+      <figcaption>
+        <span class="mono">2026</span>
+        <span>Бишкек, Кыргызстан</span>
+      </figcaption>
+    </figure>
+
+  </div>
+
+  <div class="hero__rail" aria-hidden="true">
+    <span class="mono">прокрутите</span>
+    <svg viewBox="0 0 2 60" width="2" height="60"><line x1="1" y1="0" x2="1" y2="60" stroke="currentColor" stroke-width="1"/></svg>
+  </div>
+</section>
+
+<!-- ─────────────────────  ПАЙПЛАЙН (сигнатура)  ───────────────────── -->
+<section class="pipeline invert" id="pipeline">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal">Что я делаю</p>
+      <h2 class="reveal">Один конвейер,<br>разные задачи</h2>
+      <p class="lede reveal">
+        Сырой текст на входе — структурированное действие на выходе. Правила там,
+        где они дешевле, LLM там, где без него никак. Ниже — три реальных проекта,
+        собранных по одной и той же схеме.
+      </p>
+    </header>
+
+    <div class="pipe reveal" data-pipe>
+      <div class="pipe__top">
+        <span class="pipe__src mono" data-pipe-src>telegram · чат магазина</span>
+        <span class="pipe__proj mono" data-pipe-proj>tracking-movements</span>
+      </div>
+
+      <div class="pipe__body">
+        <div class="pipe__in">
+          <p class="pipe__label mono">вход · сырой текст</p>
+          <p class="pipe__text" data-pipe-in></p>
+        </div>
+
+        <div class="pipe__flow">
+          <div class="pipe__rail"><i class="pipe__dot" data-pipe-dot></i></div>
+          <ol class="pipe__stages" data-pipe-stages></ol>
+        </div>
+
+        <div class="pipe__out">
+          <p class="pipe__label mono">выход · структура</p>
+          <pre class="pipe__json" data-pipe-out></pre>
+        </div>
+      </div>
+    </div>
+
+    <p class="pipe__note reveal">
+      Схема повторяется: <span class="mono">fetch → filter → classify → act</span>.
+      Меняются источник, промпты и то, что считается «действием».
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────────────────  ОПЫТ  ───────────────────────── -->
+<section class="work" id="work">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal">Опыт</p>
+      <h2 class="reveal">Где это работало</h2>
+    </header>
+
+    <ol class="timeline">
+      <li class="job reveal">
+        <div class="job__when">
+          <span class="mono">09.2024 — 06.2026</span>
+          <span class="job__tag">фриланс</span>
+        </div>
+        <div class="job__body">
+          <h3>Python / AI Engineer</h3>
+          <p class="job__org">E-commerce клиент, доставка по Таиланду</p>
+          <p class="job__sum">
+            Бэкенд и LLM-часть: приём платежей, трекинг доставок, мониторинг
+            заказов, ассистенты поддержки в Telegram и WhatsApp. Python, FastAPI,
+            AsyncIO. Деплой — Docker + GitLab CI/CD в Kubernetes (k3s) на VPS.
+          </p>
+          <ul class="job__list">
+            <li><b>~90%</b> обращений клиентов закрывают LLM-автоответчики без оператора</li>
+            <li>RAG-ассистент по базе товаров и заказов на векторной БД</li>
+            <li>Автономный LLM-агент: headless-оркестрация, точечные права, safety-слой с авто-паузой по лимитам</li>
+            <li>Пайплайн входящих сообщений: сбор → дедуп → классификация (правила + LLM) → действие</li>
+            <li>Сервис верификации клиента перед COD-заказом — меньше фрод-заказов</li>
+            <li>Свои MCP-инструменты для LLM-агентов; TDD (pytest), code review, контроль расходов на LLM</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="job reveal">
+        <div class="job__when">
+          <span class="mono">07.2022 — 03.2023</span>
+          <span class="job__tag">штат</span>
+        </div>
+        <div class="job__body">
+          <h3>Младший разработчик</h3>
+          <p class="job__org">Темир Тулпар Азия (ZTTA)</p>
+          <p class="job__sum">
+            SQL и работа с базами, парсинг на BeautifulSoup, внутренний веб-инструмент
+            для IT-отдела, прикладные алгоритмы под задачи отдела.
+          </p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="edu reveal">
+      <div>
+        <p class="eyebrow">Образование</p>
+        <p>МУКР — программирование в компьютерных сетях, 2023</p>
+        <p class="muted">Курсы IT-run (Бишкек), 2023–2024: Python / AI-разработка</p>
+      </div>
+      <div>
+        <p class="eyebrow">Языки</p>
+        <p>Русский — родной</p>
+        <p class="muted">Английский — B1, технический</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────  ПРОЕКТЫ  ───────────────────────── -->
+<section class="projects invert" id="projects">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal">Проекты</p>
+      <h2 class="reveal">Открытый код</h2>
+      <p class="lede reveal">
+        Три проекта, где видно и код, и результат. Каждый — тот же конвейер,
+        только под другую задачу.
+      </p>
+    </header>
+
+    <div class="cards">
+
+      <article class="card reveal">
+        <div class="card__head">
+          <h3>artirain-rag</h3>
+          <p class="card__kicker mono">RAG · Qdrant · LangGraph</p>
+        </div>
+        <p class="card__sum">
+          Ответы по корпусу документов с цитированием источников. Гибридный поиск
+          (dense + BM25, слияние RRF на стороне Qdrant), cross-encoder реранкер и
+          граф на LangGraph: retrieve → оценка контекста → генерация → проверка →
+          переписать запрос и повторить. Ответ без опоры на контекст не выдаётся.
+        </p>
+        <div class="metric">
+          <p class="metric__label mono">recall@6 на внешнем корпусе (154 стр. доков)</p>
+          <div class="metric__bars">
+            <div class="bar" style="--v:28"><span class="bar__k mono">dense</span><i></i><span class="bar__v mono">28%</span></div>
+            <div class="bar" style="--v:60"><span class="bar__k mono">+ реранк</span><i></i><span class="bar__v mono">60%</span></div>
+            <div class="bar bar--hi" style="--v:68"><span class="bar__k mono">+ граф</span><i></i><span class="bar__v mono">68%</span></div>
+          </div>
+          <p class="metric__note">
+            Полезных ответов по LLM-судье: 65% → 95% → <b>100%</b>. Узкое место было
+            в поиске, а не в промпте — это и показали evals.
+          </p>
+        </div>
+        <div class="card__links">
+          <a href="https://huggingface.co/spaces/Artirain/rag-portfolio" target="_blank" rel="noopener">Живое демо ↗</a>
+          <a href="https://github.com/Artirain/artirain-rag" target="_blank" rel="noopener">Код ↗</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__head">
+          <h3>job-hunter</h3>
+          <p class="card__kicker mono">агент · Playwright · SQLite</p>
+        </div>
+        <p class="card__sum">
+          Агент ищет вакансии, LLM отбирает подходящие — в том числе семантически,
+          по смыслу «компания реально использует ИИ», — пишет сопроводительное под
+          конкретную вакансию и откликается. Дальше читает чаты с рекрутёрами:
+          простое отвечает сам, деньги и переезд отдаёт мне черновиком в Telegram.
+        </p>
+        <p class="card__aside">
+          Этот сайт вы, скорее всего, открыли из письма, которое написал он.
+        </p>
+        <div class="metric">
+          <p class="metric__label mono">этапы прогона</p>
+          <p class="flow mono">fetch → filter → classify → letter → apply → chat</p>
+          <p class="metric__note">
+            Состояние в SQLite: дедуп по вакансии, ретраи при сетевых сбоях,
+            лимит откликов на прогон. Запуск по расписанию, отчёт — карточкой в Telegram.
+          </p>
+        </div>
+        <div class="card__links">
+          <a href="https://github.com/Artirain/job-hunter" target="_blank" rel="noopener">Код ↗</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__head">
+          <h3>finetune-vs-prompt</h3>
+          <p class="card__kicker mono">PyTorch · LoRA · evals</p>
+        </div>
+        <p class="card__sum">
+          Когда дообучить маленькую модель выгоднее, чем промптить большую.
+          LoRA-адаптер (r=16, 2.2M параметров, 8.6 МБ) поверх Qwen2.5-0.5B на
+          финансовом сентименте, честный сплит и общий eval-харнесс для всех
+          подходов.
+        </p>
+        <div class="metric">
+          <p class="metric__label mono">accuracy / латентность одного ответа</p>
+          <table class="cmp">
+            <tr><td>Qwen2.5-0.5B + LoRA</td><td class="mono hi">89.7%</td><td class="mono">86 мс</td></tr>
+            <tr><td>qwen2.5:7b zero-shot</td><td class="mono">73.5%</td><td class="mono">2.6 с</td></tr>
+            <tr><td>gpt-5.5 zero-shot</td><td class="mono">72.9%</td><td class="mono">7.7 с</td></tr>
+          </table>
+          <p class="metric__note">Тренировка — 15 минут на одной RTX 3060.</p>
+        </div>
+        <div class="card__links">
+          <a href="https://github.com/Artirain/finetune-vs-prompt" target="_blank" rel="noopener">Код ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="closed reveal">
+      <div class="closed__head">
+        <p class="eyebrow">Коммерческое</p>
+        <h3>Код в приватных репозиториях клиента</h3>
+        <p class="lede">
+          Показать не могу, рассказать — подробно: задача, архитектура, моя роль, результат.
+        </p>
+      </div>
+      <ul class="closed__list">
+        <li><b>Ассистенты поддержки</b> в Telegram и WhatsApp — подбор промпта и контекста, генерация ответа</li>
+        <li><b>Извлечение перемещений товара</b> из свободных комментариев к заказам пяти магазинов: OpenCart API → LLM → нормализация → нотификации</li>
+        <li><b>Классификатор задач</b> из потока рабочих чатов: правила плюс LLM на серую зону, дедуп и группировка</li>
+        <li><b>Приём платежей и отчётность</b>: обработка платежей, еженедельные отчёты, алерты по неоплаченным заказам</li>
+        <li><b>Трекинг доставок</b> Thai Post и мониторинг состояния заказов</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────  СТЕК  ───────────────────────── -->
+<section class="stack" id="stack">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal">Стек</p>
+      <h2 class="reveal">Чем работаю</h2>
+      <p class="lede reveal">Разделено по тому, насколько уверенно я это делаю, а не по тому, что красивее звучит.</p>
+    </header>
+
+    <div class="stack__grid">
+      <div class="lvl reveal">
+        <p class="lvl__name">Уверенно</p>
+        <ul><li>Python</li><li>LLM</li><li>Prompt Engineering</li><li>Claude API</li><li>OpenAI API</li><li>FastAPI</li><li>RAG</li></ul>
+      </div>
+      <div class="lvl reveal">
+        <p class="lvl__name">Хорошо</p>
+        <ul><li>AsyncIO</li><li>PostgreSQL</li><li>SQL</li><li>Векторные БД</li><li>REST API</li><li>Docker</li><li>GitLab CI/CD</li><li>Telegram Bot API</li><li>Git</li></ul>
+      </div>
+      <div class="lvl reveal">
+        <p class="lvl__name">Базово</p>
+        <ul><li>Kubernetes (k3s)</li><li>PyTorch</li><li>Bash</li><li>Linux</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────  КОНТАКТЫ  ───────────────────────── -->
+<section class="contact invert" id="contact">
+  <div class="wrap">
+    <p class="eyebrow reveal">Контакты</p>
+    <h2 class="contact__h reveal">Ищу работу<br>Python / AI Engineer</h2>
+    <p class="lede reveal">Удалённо, постоянно. Переезд в Москву или Санкт-Петербург обсуждаем.</p>
+    <ul class="contact__list">
+      <li class="reveal"><a href="mailto:ansre1313@gmail.com"><span class="mono">почта</span><span>ansre1313@gmail.com</span></a></li>
+      <li class="reveal"><a href="https://github.com/Artirain" target="_blank" rel="noopener"><span class="mono">github</span><span>github.com/Artirain</span></a></li>
+      <li class="reveal"><a href="https://huggingface.co/spaces/Artirain/rag-portfolio" target="_blank" rel="noopener"><span class="mono">демо</span><span>RAG-сервис вживую</span></a></li>
+    </ul>
+  </div>
+  <footer class="foot">
+    <span class="mono">Артур · Python / AI Engineer · 2026</span>
+    <span class="mono">Собрано вручную: HTML, CSS, немного JS</span>
+  </footer>
+</section>
+
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>
