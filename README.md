@@ -1,6 +1,6 @@
-# artirain-portfolio
+# artirain.github.io
 
-Портфолио-резюме: Артур, AI Engineer - https://artirain.github.io/artirain-portfolio
+Портфолио-резюме: Артур, AI Engineer - https://artirain.github.io
 
 Статика без сборки: `index.html`, `styles.css`, `main.js`, шрифты с Google Fonts.
 Деплой - GitHub Pages из ветки `main`.
