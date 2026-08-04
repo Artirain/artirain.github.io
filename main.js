@@ -43,16 +43,16 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 
 const SAMPLES = [
   {
-    src: 'telegram · рабочий чат',
-    project: 'tracking-movements',
-    input: 'завтра перекинь 3 коробки с центрального склада на точку у вокзала, там почти пусто',
-    stages: ['сбор', 'фильтр', 'llm-извлечение', 'нормализация', 'запись'],
+    src: 'telegram · общий рабочий чат',
+    project: 'notion',
+    input: 'бот что-то плохо отвечает на вопросы про сроки, надо доработать промпт',
+    stages: ['сбор', 'фильтр', 'llm-классификация', 'запись в notion', 'агент берёт в работу'],
     output: {
-      from: 'Центральный склад',
-      to: 'Точка у вокзала',
-      sku: 'SKU-4417',
-      qty: 3,
-      when: '2026-08-05',
+      is_task: true,
+      title: 'Доработать промпт: вопросы про сроки доставки',
+      project: 'autoresponder',
+      journal: 'notion',
+      status: 'взята агентом',
     },
   },
   {
