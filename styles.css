@@ -452,18 +452,38 @@ section { padding-block: clamp(84px, 11vw, 148px); }
 
 /* ─────────────────  стек  ───────────────── */
 
-.stack__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: clamp(24px, 4vw, 48px); }
-.lvl { padding-top: 22px; border-top: 1px solid var(--line-2); }
+.stack__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(16px, 2.2vw, 24px); }
+
+.lvl {
+  padding: clamp(22px, 2.6vw, 30px);
+  border: 1px solid var(--line); border-radius: 3px;
+  background: var(--paper-2);
+  align-content: start;
+}
 .lvl__name { font-family: var(--font-display); font-size: 1.15rem; letter-spacing: -.02em; }
-.lvl ul { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+.lvl ul { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
 .lvl li {
+  display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--font-mono); font-size: .7rem; letter-spacing: .04em;
-  padding: 6px 12px; border: 1px solid var(--line); border-radius: 100px;
-  color: var(--muted);
+  padding: 7px 13px; border: 1px solid var(--line); border-radius: 100px;
+  background: var(--paper); color: var(--muted);
   transition: color .3s, border-color .3s, background .3s;
 }
-.lvl li:hover { color: var(--ink); border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.lvl li:hover { color: var(--ink); border-color: var(--accent); }
 .lvl:first-child li { color: var(--ink); border-color: var(--line-2); }
+
+.ic {
+  width: 14px; height: 14px; flex: none;
+  fill: currentColor; opacity: .7;
+  transition: opacity .3s, fill .3s;
+}
+.lvl li:hover .ic { opacity: 1; fill: var(--accent); }
+
+/* у понятий без логотипа - точка, как метка «это не инструмент, а навык» */
+.lvl__dot::before {
+  content: ''; width: 6px; height: 6px; flex: none;
+  border-radius: 50%; background: var(--accent);
+}
 
 /* ─────────────────  контакты  ───────────────── */
 
