@@ -43,14 +43,14 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 
 const SAMPLES = [
   {
-    src: 'telegram · чат магазина',
+    src: 'telegram · рабочий чат',
     project: 'tracking-movements',
-    input: 'завтра закинь 3 коробки hqd с патты на пхукет, там почти пусто',
+    input: 'завтра перекинь 3 коробки с центрального склада на точку у вокзала, там почти пусто',
     stages: ['сбор', 'фильтр', 'llm-извлечение', 'нормализация', 'запись'],
     output: {
-      from: 'Паттайя',
-      to: 'Пхукет',
-      model: 'HQD Ultra',
+      from: 'Центральный склад',
+      to: 'Точка у вокзала',
+      sku: 'SKU-4417',
       qty: 3,
       when: '2026-08-05',
     },
