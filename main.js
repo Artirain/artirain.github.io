@@ -1,4 +1,4 @@
-/* Артур — портфолио. Появление блоков + живой конвейер в секции «Что я делаю». */
+/* Артур - портфолио. Появление блоков + живой конвейер в секции «Что я делаю». */
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -160,7 +160,7 @@ const SAMPLES = [
     elIn.textContent = '';
     for (let i = 0; i < text.length; i++) {
       elIn.textContent += text[i];
-      // на пробелах чуть длиннее — читается как живой набор
+      // на пробелах чуть длиннее - читается как живой набор
       await sleep(text[i] === ' ' ? 42 : 20);
     }
   }
