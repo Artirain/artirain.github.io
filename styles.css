@@ -9,6 +9,7 @@
   --ink:     #17102B;
   --muted:   #5C4E80;
   --accent:  #5B2AE6;
+  --violet:  #8B31E0;   /* тёплый фиолет для ховеров, чтобы не отдавал синим */
   --soft:    #C9B8FF;
   --line:    rgba(23, 16, 43, .14);
   --line-2:  rgba(23, 16, 43, .28);
@@ -28,6 +29,7 @@
   --ink:     #F2EEFC;
   --muted:   #A99AD1;
   --accent:  #9B7BFF;
+  --violet:  #C08BFF;
   --soft:    #4A2E9E;
   --line:    rgba(242, 238, 252, .16);
   --line-2:  rgba(242, 238, 252, .32);
@@ -485,21 +487,23 @@ section { padding-block: clamp(84px, 11vw, 148px); }
   background: var(--paper); color: var(--muted);
   transition: color .3s, border-color .3s, background .3s;
 }
-.lvl li:hover { color: var(--ink); border-color: var(--accent); }
 .lvl:first-child li { color: var(--ink); border-color: var(--line-2); }
+.lvl li:hover { color: var(--ink); border-color: var(--violet); }
 
 .ic {
   width: 14px; height: 14px; flex: none;
   fill: currentColor; opacity: .7;
   transition: opacity .3s, fill .3s;
 }
-.lvl li:hover .ic { opacity: 1; fill: var(--accent); }
+.lvl li:hover .ic { opacity: 1; fill: var(--violet); }
 
 /* у понятий без логотипа - точка, как метка «это не инструмент, а навык» */
 .lvl__dot::before {
   content: ''; width: 6px; height: 6px; flex: none;
   border-radius: 50%; background: var(--accent);
+  transition: background .3s;
 }
+.lvl__dot:hover::before { background: var(--violet); }
 
 /* ─────────────────  контакты  ───────────────── */
 
