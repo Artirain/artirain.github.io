@@ -325,7 +325,7 @@
         <h3 class="reveal">Решено под чужие требования</h3>
         <p class="lede reveal">
           Здесь задачу ставил не я: чужие требования, чужие критерии приёмки, срок.
-          Оба задания сданы, код открыт.
+          Все четыре сданы, код открыт.
         </p>
       </header>
 
@@ -364,6 +364,61 @@
           </div>
           <div class="card__links">
             <a href="https://github.com/Artirain/qcai-skills" target="_blank" rel="noopener">Код ↗</a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__head">
+            <h3>blogger-scout</h3>
+            <p class="card__kicker mono">Playwright · LLM · Google Sheets</p>
+          </div>
+          <p class="card__sum">
+            Агент подключается к таблице заказчика, разбирает уже отобранных блогеров,
+            собирает из них портрет идеального, ищет по нему новых в Instagram и пишет
+            каждому персональное предложение о бартере. Ключевое решение: кандидатов не
+            придумывает модель - каждый профиль открывается браузером, и метрики
+            снимаются с живой страницы.
+          </p>
+          <div class="metric">
+            <p class="metric__label mono">воронка одного реального прогона</p>
+            <p class="flow mono">33 ссылки -> 19 живых -> 17 кандидатов -> 12 -> 10 -> 5 офферов</p>
+            <p class="metric__note">
+              По дороге выяснилось, что <b>14 из 33</b> профилей в базе заказчика удалены -
+              42%. Инструмент не выбрасывает их молча, а выносит отдельным списком:
+              портрет по такой таблице наполовину строился бы на пустоте. 79 тестов.
+            </p>
+          </div>
+          <div class="card__links">
+            <a href="https://github.com/Artirain/blogger-scout" target="_blank" rel="noopener">Код ↗</a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__head">
+            <h3>nodemaven-mcp</h3>
+            <p class="card__kicker mono">MCP · Python · прокси</p>
+          </div>
+          <p class="card__sum">
+            MCP-сервер, который даёт агенту резидентный IP. Пять инструментов: собрать
+            прокси-URL с гео-таргетингом, проверить, что видно с этого выхода, забрать
+            страницу текстом, показать доступные локации и расход трафика. Ставится в
+            Claude Code, Claude Desktop, Cursor - в любой MCP-клиент.
+          </p>
+          <p class="card__aside">
+            Зачем: у агента датацентровый IP, а цены, наличие и выдача меняются по гео.
+            Прокси эту задачу решает давно - до сессии агента он просто не доставал.
+          </p>
+          <div class="metric">
+            <p class="metric__label mono">как это выглядит в диалоге</p>
+            <p class="flow mono">«покажи страницу как её видит покупатель в Мюнхене» -> nodemaven_fetch(country=de, city=munich) -> 200, 14.99 EUR, exit IP Vodafone</p>
+            <p class="metric__note">
+              Каждый инструмент отдаёт компактный markdown или полный JSON и режет
+              длинные списки на страницы. 61 тест, CI на GitHub Actions, MIT.
+              Клиент неофициальный.
+            </p>
+          </div>
+          <div class="card__links">
+            <a href="https://github.com/Artirain/nodemaven-mcp" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </article>
 

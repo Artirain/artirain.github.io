@@ -472,6 +472,8 @@ section { padding-block: clamp(84px, 11vw, 148px); }
   border-top: 1px solid var(--line);
 }
 .subsec .sec-head { margin-bottom: clamp(30px, 4vw, 46px); }
+/* четыре карточки: сеткой 2x2, иначе последняя растягивается на всю ширину */
+.subsec .cards { grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); }
 .subsec .sec-head h3 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); margin-top: 16px; letter-spacing: -.02em; }
 .subsec .sec-head .lede { margin-top: 16px; color: var(--muted); }
 
