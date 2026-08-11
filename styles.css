@@ -4,8 +4,8 @@
    ============================================================ */
 
 :root {
-  --paper:   #F3F0FA;
-  --paper-2: #E9E3F7;
+  --paper:   #E6E0F3;
+  --paper-2: #DBD2EE;
   --ink:     #17102B;
   --muted:   #5C4E80;
   --accent:  #5B2AE6;
@@ -456,6 +456,14 @@ section { padding-block: clamp(84px, 11vw, 148px); }
 .cmp td:nth-child(3) { text-align: right; width: 64px; }
 .cmp tr:last-child td { border-bottom: 0; }
 .cmp .hi { color: var(--accent); font-weight: 700; }
+
+.subsec {
+  margin-top: clamp(40px, 6vw, 72px); padding-top: clamp(34px, 4vw, 50px);
+  border-top: 1px solid var(--line);
+}
+.subsec .sec-head { margin-bottom: clamp(30px, 4vw, 46px); }
+.subsec .sec-head h3 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); margin-top: 16px; letter-spacing: -.02em; }
+.subsec .sec-head .lede { margin-top: 16px; color: var(--muted); }
 
 .closed {
   margin-top: clamp(40px, 6vw, 72px); padding-top: clamp(34px, 4vw, 50px);

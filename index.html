@@ -160,7 +160,7 @@
   <div class="wrap">
     <header class="sec-head">
       <p class="eyebrow reveal">Опыт</p>
-      <h2 class="reveal">Где это работало</h2>
+      <h2 class="reveal">Где я работал</h2>
     </header>
 
     <ol class="timeline">
@@ -314,6 +314,85 @@
         </div>
       </article>
 
+    </div>
+
+    <div class="subsec">
+      <header class="sec-head">
+        <p class="eyebrow reveal">Тестовые задания</p>
+        <h3 class="reveal">Решено под чужие требования</h3>
+        <p class="lede reveal">
+          Здесь задачу ставил не я: чужие требования, чужие критерии приёмки, срок.
+          Оба задания сданы, код открыт.
+        </p>
+      </header>
+
+      <div class="cards">
+
+        <article class="card reveal">
+          <div class="card__head">
+            <h3>qcai-skills</h3>
+            <p class="card__kicker mono">агентные скиллы · аудит кода · Pillow</p>
+          </div>
+          <p class="card__sum">
+            Два инструмента для платформы AI-разработки. <b>ship-check</b> - аудит перед
+            деплоем: детерминированный сканер собирает кандидатов с привязкой к строке,
+            модель подтверждает каждого по коду вокруг, отдельный <span class="mono">verify.py</span>
+            сверяет результат с базой. Формат инструментов платформы снят с самого клиента -
+            документации на него нет.
+          </p>
+          <p class="card__aside">
+            Второй скилл, <b>carousel-studio</b>: модель рисует только фон, типографику ставит
+            код по сетке. Дрейф палитры между кадрами - 25.8 против 5.7 с зафиксированным
+            арт-дирекшном.
+          </p>
+          <div class="metric">
+            <p class="metric__label mono">один и тот же код, 12 заложенных проблем</p>
+            <table class="cmp">
+              <tr><td>Агент в чате, прогон 1</td><td class="mono">12</td><td class="mono">27k</td></tr>
+              <tr><td>прогон 2</td><td class="mono">9</td><td class="mono">15k</td></tr>
+              <tr><td>прогон 3</td><td class="mono">9</td><td class="mono">12k</td></tr>
+              <tr><td>ship-check</td><td class="mono hi">20+1</td><td class="mono">скан 0</td></tr>
+            </table>
+            <p class="metric__note">
+              Находок за прогон и токенов. Три одинаковых запроса - три разных ответа, и ни
+              один не проверить. <span class="mono">verify.py</span> сравнивает с базой:
+              <b>25 -> 0</b>, и отдельно показывает, что патч занёс нового.
+            </p>
+          </div>
+          <div class="card__links">
+            <a href="https://github.com/Artirain/qcai-skills" target="_blank" rel="noopener">Код ↗</a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__head">
+            <h3>django-stripe-checkout</h3>
+            <p class="card__kicker mono">Django · Stripe · Docker</p>
+          </div>
+          <p class="card__sum">
+            Каталог и заказы с оплатой через Stripe - оба потока, Checkout Session и
+            Payment Intent. Скидка и налог уходят в Stripe объектами (Coupon и TaxRate),
+            а не зашитой в цену суммой, и покупатель видит их на стороне Stripe. Две валюты:
+            своя пара ключей на каждую, глобальный <span class="mono">stripe.api_key</span>
+            не трогается ни разу.
+          </p>
+          <div class="metric">
+            <p class="metric__label mono">путь платежа</p>
+            <p class="flow mono">GET /buy/{id} -> Session.create -> Checkout -> Session.retrieve -> paid</p>
+            <p class="metric__note">
+              Заказ помечается оплаченным только после <span class="mono">Session.retrieve</span> -
+              редирект на <span class="mono">success_url</span> сам по себе ничего не доказывает.
+              32 теста на pytest, вызовы Stripe замоканы. Стенд на бесплатном плане: после
+              простоя первый запрос поднимает контейнер ~40 секунд.
+            </p>
+          </div>
+          <div class="card__links">
+            <a href="https://django-stripe-checkout-wnmz.onrender.com" target="_blank" rel="noopener">Живой стенд ↗</a>
+            <a href="https://github.com/Artirain/django-stripe-checkout" target="_blank" rel="noopener">Код ↗</a>
+          </div>
+        </article>
+
+      </div>
     </div>
 
     <div class="closed reveal">
