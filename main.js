@@ -202,6 +202,32 @@ const SAMPLES = [
   })();
 })();
 
+/* ─────────────────  почта: копируем адрес на клик  ─────────────────
+   mailto открывает почтовый клиент, а если его нет - не происходит ничего.
+   Поэтому по клику адрес ещё и уходит в буфер обмена. */
+
+(() => {
+  const links = [...document.querySelectorAll('a[href^="mailto:"]')];
+  if (!links.length) return;
+
+  const toast = document.createElement('div');
+  toast.className = 'toast mono';
+  toast.setAttribute('role', 'status');
+  document.body.appendChild(toast);
+
+  let timer;
+  links.forEach((link) => {
+    link.addEventListener('click', () => {
+      const mail = link.getAttribute('href').replace('mailto:', '');
+      navigator.clipboard?.writeText(mail).catch(() => {});
+      toast.textContent = `адрес скопирован - ${mail}`;
+      toast.classList.add('toast--on');
+      clearTimeout(timer);
+      timer = setTimeout(() => toast.classList.remove('toast--on'), 2800);
+    });
+  });
+})();
+
 /* ─────────────────  подсветка активного раздела в шапке  ───────────────── */
 
 (() => {
