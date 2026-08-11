@@ -472,8 +472,43 @@ section { padding-block: clamp(84px, 11vw, 148px); }
   border-top: 1px solid var(--line);
 }
 .subsec .sec-head { margin-bottom: clamp(30px, 4vw, 46px); }
-/* четыре карточки: сеткой 2x2, иначе последняя растягивается на всю ширину */
-.subsec .cards { grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); }
+
+/* переключатель тестовых заданий: четыре карточки в одной рамке, по одной за раз */
+.switch__tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: clamp(22px, 3vw, 34px); }
+.switch__tab {
+  font-family: var(--font-mono); font-size: .7rem; letter-spacing: .04em;
+  padding: 9px 17px; border: 1px solid var(--line); border-radius: 100px;
+  background: transparent; color: var(--muted); cursor: pointer;
+  transition: color .3s, border-color .3s, background .3s;
+}
+.switch__tab:hover { color: var(--ink); border-color: var(--violet); }
+.switch__tab[aria-selected="true"] {
+  background: var(--accent); border-color: var(--accent); color: var(--paper);
+}
+
+.switch__stage { position: relative; }
+.switch--js .switch__stage { transition: height .45s var(--ease); }
+.switch--js .switch__panel {
+  position: absolute; top: 0; left: 0; width: 100%;
+  opacity: 0; transform: translateY(14px);
+  pointer-events: none; visibility: hidden;
+  transition: opacity .38s var(--ease), transform .38s var(--ease);
+}
+.switch--js .switch__panel.is-on {
+  opacity: 1; transform: none; pointer-events: auto; visibility: visible;
+}
+/* карточка одна на всю ширину: текст слева, цифры справа */
+.card--wide { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(26px, 3.4vw, 54px); align-content: start; }
+.card--wide:hover { transform: none; }
+.card--wide .card__head, .card--wide .card__links { grid-column: 1 / -1; }
+.card--wide .card__right { border-left: 1px solid var(--line); padding-left: clamp(26px, 3.4vw, 54px); }
+.card--wide .metric { margin-top: 0; padding-top: 0; border-top: 0; }
+.card--wide .card__sum { margin-top: 22px; }
+@media (max-width: 900px) {
+  .card--wide { grid-template-columns: 1fr; }
+  .card--wide .card__right { border-left: 0; padding-left: 0; }
+  .card--wide .metric { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }
+}
 .subsec .sec-head h3 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); margin-top: 16px; letter-spacing: -.02em; }
 .subsec .sec-head .lede { margin-top: 16px; color: var(--muted); }
 

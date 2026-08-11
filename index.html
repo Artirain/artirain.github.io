@@ -329,127 +329,163 @@
         </p>
       </header>
 
-      <div class="cards">
+      <div class="switch reveal" data-switch>
+        <div class="switch__tabs" role="tablist" aria-label="Тестовые задания">
+          <button class="switch__tab mono" role="tab" id="tt-tab-1" aria-controls="tt-panel-1" aria-selected="true" type="button">qcai-skills</button>
+          <button class="switch__tab mono" role="tab" id="tt-tab-2" aria-controls="tt-panel-2" aria-selected="false" type="button">blogger-scout</button>
+          <button class="switch__tab mono" role="tab" id="tt-tab-3" aria-controls="tt-panel-3" aria-selected="false" type="button">nodemaven-mcp</button>
+          <button class="switch__tab mono" role="tab" id="tt-tab-4" aria-controls="tt-panel-4" aria-selected="false" type="button">django-stripe-checkout</button>
+        </div>
 
-        <article class="card reveal">
-          <div class="card__head">
-            <h3>qcai-skills</h3>
-            <p class="card__kicker mono">агентные скиллы · аудит кода · Pillow</p>
-          </div>
-          <p class="card__sum">
-            Два инструмента для платформы AI-разработки. <b>ship-check</b> - аудит перед
-            деплоем: детерминированный сканер собирает кандидатов с привязкой к строке,
-            модель подтверждает каждого по коду вокруг, отдельный <span class="mono">verify.py</span>
-            сверяет результат с базой. Формат инструментов платформы снят с самого клиента -
-            документации на него нет.
-          </p>
-          <p class="card__aside">
-            Второй скилл, <b>carousel-studio</b>: модель рисует только фон, типографику ставит
-            код по сетке. Дрейф палитры между кадрами - 25.8 против 5.7 с зафиксированным
-            арт-дирекшном.
-          </p>
-          <div class="metric">
-            <p class="metric__label mono">один и тот же код, 12 заложенных проблем</p>
-            <table class="cmp">
-              <tr><td>Агент в чате, прогон 1</td><td class="mono">12</td><td class="mono">27k</td></tr>
-              <tr><td>прогон 2</td><td class="mono">9</td><td class="mono">15k</td></tr>
-              <tr><td>прогон 3</td><td class="mono">9</td><td class="mono">12k</td></tr>
-              <tr><td>ship-check</td><td class="mono hi">20+1</td><td class="mono">скан 0</td></tr>
-            </table>
-            <p class="metric__note">
-              Находок за прогон и токенов. Три одинаковых запроса - три разных ответа, и ни
-              один не проверить. <span class="mono">verify.py</span> сравнивает с базой:
-              <b>25 -> 0</b>, и отдельно показывает, что патч занёс нового.
-            </p>
-          </div>
-          <div class="card__links">
-            <a href="https://github.com/Artirain/qcai-skills" target="_blank" rel="noopener">Код ↗</a>
-          </div>
-        </article>
+        <div class="switch__stage">
 
-        <article class="card reveal">
-          <div class="card__head">
-            <h3>blogger-scout</h3>
-            <p class="card__kicker mono">Playwright · LLM · Google Sheets</p>
-          </div>
-          <p class="card__sum">
-            Агент подключается к таблице заказчика, разбирает уже отобранных блогеров,
-            собирает из них портрет идеального, ищет по нему новых в Instagram и пишет
-            каждому персональное предложение о бартере. Ключевое решение: кандидатов не
-            придумывает модель - каждый профиль открывается браузером, и метрики
-            снимаются с живой страницы.
-          </p>
-          <div class="metric">
-            <p class="metric__label mono">воронка одного реального прогона</p>
-            <p class="flow mono">33 ссылки -> 19 живых -> 17 кандидатов -> 12 -> 10 -> 5 офферов</p>
-            <p class="metric__note">
-              По дороге выяснилось, что <b>14 из 33</b> профилей в базе заказчика удалены -
-              42%. Инструмент не выбрасывает их молча, а выносит отдельным списком:
-              портрет по такой таблице наполовину строился бы на пустоте. 79 тестов.
-            </p>
-          </div>
-          <div class="card__links">
-            <a href="https://github.com/Artirain/blogger-scout" target="_blank" rel="noopener">Код ↗</a>
-          </div>
-        </article>
+          <article class="card card--wide switch__panel is-on" role="tabpanel" id="tt-panel-1" aria-labelledby="tt-tab-1">
+            <div class="card__head">
+              <h3>qcai-skills</h3>
+              <p class="card__kicker mono">агентные скиллы · аудит кода · Pillow</p>
+            </div>
+            <div class="card__left">
+              <p class="card__sum">
+                Два инструмента для платформы AI-разработки. <b>ship-check</b> - аудит перед
+                деплоем: детерминированный сканер собирает кандидатов с привязкой к строке,
+                модель подтверждает каждого по коду вокруг, отдельный <span class="mono">verify.py</span>
+                сверяет результат с базой. Формат инструментов платформы снят с самого клиента -
+                документации на него нет.
+              </p>
+              <p class="card__aside">
+                Второй скилл, <b>carousel-studio</b>: модель рисует только фон, типографику ставит
+                код по сетке. Дрейф палитры между кадрами - 25.8 против 5.7 с зафиксированным
+                арт-дирекшном.
+              </p>
+            </div>
+            <div class="card__right">
+              <div class="metric">
+                <p class="metric__label mono">один и тот же код, 12 заложенных проблем</p>
+                <table class="cmp">
+                  <tr><td>Агент в чате, прогон 1</td><td class="mono">12</td><td class="mono">27k</td></tr>
+                  <tr><td>прогон 2</td><td class="mono">9</td><td class="mono">15k</td></tr>
+                  <tr><td>прогон 3</td><td class="mono">9</td><td class="mono">12k</td></tr>
+                  <tr><td>ship-check</td><td class="mono hi">20+1</td><td class="mono">скан 0</td></tr>
+                </table>
+                <p class="metric__note">
+                  Находок за прогон и токенов. Три одинаковых запроса - три разных ответа, и ни
+                  один не проверить. <span class="mono">verify.py</span> сравнивает с базой:
+                  <b>25 -> 0</b>, и отдельно показывает, что патч занёс нового.
+                </p>
+              </div>
+            </div>
+            <div class="card__links">
+              <a href="https://github.com/Artirain/qcai-skills" target="_blank" rel="noopener">Код ↗</a>
+            </div>
+          </article>
 
-        <article class="card reveal">
-          <div class="card__head">
-            <h3>nodemaven-mcp</h3>
-            <p class="card__kicker mono">MCP · Python · прокси</p>
-          </div>
-          <p class="card__sum">
-            MCP-сервер, который даёт агенту резидентный IP. Пять инструментов: собрать
-            прокси-URL с гео-таргетингом, проверить, что видно с этого выхода, забрать
-            страницу текстом, показать доступные локации и расход трафика. Ставится в
-            Claude Code, Claude Desktop, Cursor - в любой MCP-клиент.
-          </p>
-          <p class="card__aside">
-            Зачем: у агента датацентровый IP, а цены, наличие и выдача меняются по гео.
-            Прокси эту задачу решает давно - до сессии агента он просто не доставал.
-          </p>
-          <div class="metric">
-            <p class="metric__label mono">как это выглядит в диалоге</p>
-            <p class="flow mono">«покажи страницу как её видит покупатель в Мюнхене» -> nodemaven_fetch(country=de, city=munich) -> 200, 14.99 EUR, exit IP Vodafone</p>
-            <p class="metric__note">
-              Каждый инструмент отдаёт компактный markdown или полный JSON и режет
-              длинные списки на страницы. 61 тест, CI на GitHub Actions, MIT.
-              Клиент неофициальный.
-            </p>
-          </div>
-          <div class="card__links">
-            <a href="https://github.com/Artirain/nodemaven-mcp" target="_blank" rel="noopener">Код ↗</a>
-          </div>
-        </article>
+          <article class="card card--wide switch__panel" role="tabpanel" id="tt-panel-2" aria-labelledby="tt-tab-2">
+            <div class="card__head">
+              <h3>blogger-scout</h3>
+              <p class="card__kicker mono">Playwright · LLM · Google Sheets</p>
+            </div>
+            <div class="card__left">
+              <p class="card__sum">
+                Агент подключается к таблице заказчика, разбирает уже отобранных блогеров,
+                собирает из них портрет идеального, ищет по нему новых в Instagram и пишет
+                каждому персональное предложение о бартере.
+              </p>
+              <p class="card__aside">
+                Ключевое решение: кандидатов не придумывает модель - каждый профиль
+                открывается браузером, и метрики снимаются с живой страницы.
+              </p>
+            </div>
+            <div class="card__right">
+              <div class="metric">
+                <p class="metric__label mono">воронка одного реального прогона</p>
+                <table class="cmp">
+                  <tr><td>Ссылок в таблице</td><td class="mono">33</td><td class="mono"></td></tr>
+                  <tr><td>из них живых профилей</td><td class="mono">19</td><td class="mono">-42%</td></tr>
+                  <tr><td>найдено кандидатов</td><td class="mono">17</td><td class="mono"></td></tr>
+                  <tr><td>прошли проверку и скоринг</td><td class="mono">10</td><td class="mono"></td></tr>
+                  <tr><td>дошли до офферов</td><td class="mono hi">5</td><td class="mono"></td></tr>
+                </table>
+                <p class="metric__note">
+                  По дороге выяснилось, что <b>14 из 33</b> профилей в базе заказчика удалены.
+                  Инструмент не выбрасывает их молча, а выносит отдельным списком: портрет по
+                  такой таблице наполовину строился бы на пустоте. 79 тестов.
+                </p>
+              </div>
+            </div>
+            <div class="card__links">
+              <a href="https://github.com/Artirain/blogger-scout" target="_blank" rel="noopener">Код ↗</a>
+            </div>
+          </article>
 
-        <article class="card reveal">
-          <div class="card__head">
-            <h3>django-stripe-checkout</h3>
-            <p class="card__kicker mono">Django · Stripe · Docker</p>
-          </div>
-          <p class="card__sum">
-            Каталог и заказы с оплатой через Stripe - оба потока, Checkout Session и
-            Payment Intent. Скидка и налог уходят в Stripe объектами (Coupon и TaxRate),
-            а не зашитой в цену суммой, и покупатель видит их на стороне Stripe. Две валюты:
-            своя пара ключей на каждую, глобальный <span class="mono">stripe.api_key</span>
-            не трогается ни разу.
-          </p>
-          <div class="metric">
-            <p class="metric__label mono">путь платежа</p>
-            <p class="flow mono">GET /buy/{id} -> Session.create -> Checkout -> Session.retrieve -> paid</p>
-            <p class="metric__note">
-              Заказ помечается оплаченным только после <span class="mono">Session.retrieve</span> -
-              редирект на <span class="mono">success_url</span> сам по себе ничего не доказывает.
-              32 теста на pytest, вызовы Stripe замоканы. Стенд на бесплатном плане: после
-              простоя первый запрос поднимает контейнер ~40 секунд.
-            </p>
-          </div>
-          <div class="card__links">
-            <a href="https://django-stripe-checkout-wnmz.onrender.com" target="_blank" rel="noopener">Живой стенд ↗</a>
-            <a href="https://github.com/Artirain/django-stripe-checkout" target="_blank" rel="noopener">Код ↗</a>
-          </div>
-        </article>
+          <article class="card card--wide switch__panel" role="tabpanel" id="tt-panel-3" aria-labelledby="tt-tab-3">
+            <div class="card__head">
+              <h3>nodemaven-mcp</h3>
+              <p class="card__kicker mono">MCP · Python · прокси</p>
+            </div>
+            <div class="card__left">
+              <p class="card__sum">
+                MCP-сервер, который даёт агенту резидентный IP. Пять инструментов: собрать
+                прокси-URL с гео-таргетингом, проверить, что видно с этого выхода, забрать
+                страницу текстом, показать доступные локации и расход трафика. Ставится в
+                Claude Code, Claude Desktop, Cursor - в любой MCP-клиент.
+              </p>
+              <p class="card__aside">
+                Зачем: у агента датацентровый IP, а цены, наличие и выдача меняются по гео.
+                Прокси эту задачу решает давно - до сессии агента он просто не доставал.
+              </p>
+            </div>
+            <div class="card__right">
+              <div class="metric">
+                <p class="metric__label mono">как это выглядит в диалоге</p>
+                <p class="flow mono">«покажи страницу как её видит покупатель в Мюнхене» -> nodemaven_fetch(country=de, city=munich) -> 200, 14.99 EUR, exit IP Vodafone</p>
+                <p class="metric__note">
+                  Каждый инструмент отдаёт компактный markdown или полный JSON и режет
+                  длинные списки на страницы. 61 тест, CI на GitHub Actions, MIT.
+                  Клиент неофициальный.
+                </p>
+              </div>
+            </div>
+            <div class="card__links">
+              <a href="https://github.com/Artirain/nodemaven-mcp" target="_blank" rel="noopener">Код ↗</a>
+            </div>
+          </article>
 
+          <article class="card card--wide switch__panel" role="tabpanel" id="tt-panel-4" aria-labelledby="tt-tab-4">
+            <div class="card__head">
+              <h3>django-stripe-checkout</h3>
+              <p class="card__kicker mono">Django · Stripe · Docker</p>
+            </div>
+            <div class="card__left">
+              <p class="card__sum">
+                Каталог и заказы с оплатой через Stripe - оба потока, Checkout Session и
+                Payment Intent. Скидка и налог уходят в Stripe объектами (Coupon и TaxRate),
+                а не зашитой в цену суммой, и покупатель видит их на стороне Stripe. Две валюты:
+                своя пара ключей на каждую, глобальный <span class="mono">stripe.api_key</span>
+                не трогается ни разу.
+              </p>
+              <p class="card__aside">
+                Заказ помечается оплаченным только после <span class="mono">Session.retrieve</span> -
+                редирект на <span class="mono">success_url</span> сам по себе ничего не доказывает.
+              </p>
+            </div>
+            <div class="card__right">
+              <div class="metric">
+                <p class="metric__label mono">путь платежа</p>
+                <p class="flow mono">GET /buy/{id} -> Session.create -> Checkout -> Session.retrieve -> paid</p>
+                <p class="metric__note">
+                  32 теста на pytest, вызовы Stripe замоканы. Docker и <span class="mono">render.yaml</span>:
+                  домен стенд берёт из окружения, руками нигде не прописан. Стенд на бесплатном
+                  плане - после простоя первый запрос поднимает контейнер ~40 секунд.
+                </p>
+              </div>
+            </div>
+            <div class="card__links">
+              <a href="https://django-stripe-checkout-wnmz.onrender.com" target="_blank" rel="noopener">Живой стенд ↗</a>
+              <a href="https://github.com/Artirain/django-stripe-checkout" target="_blank" rel="noopener">Код ↗</a>
+            </div>
+          </article>
+
+        </div>
       </div>
     </div>
 

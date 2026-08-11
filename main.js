@@ -202,6 +202,52 @@ const SAMPLES = [
   })();
 })();
 
+/* ─────────────────  переключатель тестовых заданий  ─────────────────
+   Без JS панели остаются в потоке и видны все - список, но рабочий. */
+
+(() => {
+  const root = document.querySelector('[data-switch]');
+  if (!root) return;
+
+  const tabs = [...root.querySelectorAll('.switch__tab')];
+  const panels = [...root.querySelectorAll('.switch__panel')];
+  const stage = root.querySelector('.switch__stage');
+  if (!stage || !tabs.length || tabs.length !== panels.length) return;
+
+  root.classList.add('switch--js');
+
+  const fit = () => {
+    const on = panels.find((p) => p.classList.contains('is-on'));
+    if (on) stage.style.height = `${on.offsetHeight}px`;
+  };
+
+  const show = (i) => {
+    tabs.forEach((tab, n) => {
+      tab.setAttribute('aria-selected', String(n === i));
+      tab.tabIndex = n === i ? 0 : -1;
+    });
+    panels.forEach((panel, n) => panel.classList.toggle('is-on', n === i));
+    fit();
+  };
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => show(i));
+    tab.addEventListener('keydown', (e) => {
+      const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!step) return;
+      e.preventDefault();
+      const next = (i + step + tabs.length) % tabs.length;
+      tabs[next].focus();
+      show(next);
+    });
+  });
+
+  show(0);
+  window.addEventListener('resize', fit);
+  // шрифты приезжают позже и меняют высоту панели
+  if (document.fonts) document.fonts.ready.then(fit);
+})();
+
 /* ─────────────────  почта: копируем адрес на клик  ─────────────────
    mailto открывает почтовый клиент, а если его нет - не происходит ничего.
    Поэтому по клику адрес ещё и уходит в буфер обмена. */
